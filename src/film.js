@@ -20,7 +20,9 @@ class Film {
 
     if (this.ticketsSold == this.capacity) {
       div.classList.add("sold-out")
-      buy.disabled = true // doesnt work yet
+      // buy.disabled = true // doesnt work 
+      // buy.innerText = "Sold Out"
+      // buy.style.backgroundColor = "grey"
     }
 
     div.dataset.id = this.id
@@ -45,7 +47,7 @@ class Film {
     ticketNum.innerText = this.capacity - this.ticketsSold
 
     if (this.ticketsSold === this.capacity) {
-      buy.diabled = true // doesnt work yet
+      buy.disabled = true // doesnt work 
     }
 
     buy.movie = this
