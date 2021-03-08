@@ -6,11 +6,13 @@ class API {
   parseJSON = r => r.json() 
 
   getFilms = () => {
-    fetch(this.url)
+    return fetch(this.url)
     .then(this.parseJSON)
-    .then(data => console.log(data))
   }
 
+  // Not in use with the advanced deliverables
+  // I just load all films, create instances and use those instance's data
+  // No need to do another fetch request
   getFilm = id => {
     fetch(`${this.url}/${id}`)
     .then(this.parseJSON)
@@ -18,7 +20,7 @@ class API {
   }
 
   updateFilm = (id, data) => {
-    fetch(`${this.url}/${id}`, {
+    return fetch(`${this.url}/${id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json',
@@ -27,6 +29,5 @@ class API {
       body: JSON.stringify(data)
     })
     .then(this.parseJSON)
-    .then(data => console.log(data))
   }
 }
